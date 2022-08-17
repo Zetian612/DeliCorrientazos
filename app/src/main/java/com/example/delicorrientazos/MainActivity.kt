@@ -3,27 +3,26 @@ package com.example.delicorrientazos
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.delicorrientazos.databinding.ActivityMainBinding
+import com.example.delicorrientazos.ui.account.AccountFragment
 import com.example.delicorrientazos.ui.favorites.FavoritesFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+    lateinit var bottomNav : BottomNavigationView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val favoritesFragment = FavoritesFragment()
+        val accountFragment = AccountFragment()
 
-        val loginButton = findViewById<android.widget.Button>(R.id.login_button)
 
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            when (it.itemId) {
-                R.id.favorite -> {
-                    setCurrentFragment(favoritesFragment)
-                }
-                else -> {
-                    setCurrentFragment(favoritesFragment)
-                }
-            }
-        }
     }
 
     private fun setCurrentFragment(fragment: Fragment) {
