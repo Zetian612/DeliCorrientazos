@@ -70,9 +70,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Space
-                android:layout_width="8dp"
-                android:layout_height="wrap_content" />
 
             <Button
                 android:id="@+id/signupButton"
@@ -82,6 +79,7 @@
                 android:backgroundTint="#fdcf00"
                 android:text="Registrarse"
                 android:textColor="@color/black" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -99,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="Register"
+            android:text="Registrarse"
             android:textSize="25sp" />
 
     </LinearLayout>
