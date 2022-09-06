@@ -6,8 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.delicorrientazos.R
 import com.example.delicorrientazos.ui.home.Service
 
-class ServiceAdapter(private val serviceList:List<Service>) :
-    RecyclerView.Adapter<ServiceViewHolder>() {
+class ServiceAdapter(private val serviceList:List<Service>, private val onClickListener: (Service) -> Unit) : RecyclerView.Adapter<ServiceViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ServiceViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -16,7 +15,7 @@ class ServiceAdapter(private val serviceList:List<Service>) :
 
     override fun onBindViewHolder(holder: ServiceViewHolder, position: Int) {
         val item = serviceList[position]
-        holder.render(item)
+        holder.render(item,onClickListener)
     }
 
     override fun getItemCount(): Int = serviceList.size

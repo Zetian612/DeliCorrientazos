@@ -3,4 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="all" />
+    <string name="deliciosas_empanadas_personaliza_la_tuya">Deliciosas Empanadas, personaliza la tuya</string>
+    <string name="cart">cart</string>
+    <string name="producto">Producto</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="ingrediente">Ingrediente</string>
 </resources>

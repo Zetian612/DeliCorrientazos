@@ -13,11 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DeliCorrientazos"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ui.home.services.delicias.CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.services.loquesea.LoQueSeaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.services.corrientazos.CorrientazosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.services.delicias.DeliciasMcActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.services.asesorias.AsesoriasActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.auth.RegisterActivity"
             android:exported="false" />
-
         <activity
             android:name=".ui.auth.LoginActivity"
             android:exported="false" />

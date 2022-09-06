@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.services.delicias.DeliciasMcActivity"
+    android:id="@+id/container_delicias_mc"
+    android:padding="14dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/deliciosas_empanadas_personaliza_la_tuya"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="231dp"
+        android:layout_height="303dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="86dp"
+        android:contentDescription="@string/all"
+        android:src="@drawable/pixlr_bg_result__2_" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewIngredientes"
+        android:layout_width="378dp"
+        android:layout_height="652dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:listitem="@layout/item_ingredientes" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="400dp"
+        android:src="@drawable/whatsapp_image_2022_08_23_at_6_07_52_pm" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddCartDMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:clickable="true"
+        app:backgroundTint="@color/app_color"
+        app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24"
+        android:focusable="true"
+        android:contentDescription="@string/cart" />
+
+
+</FrameLayout>
