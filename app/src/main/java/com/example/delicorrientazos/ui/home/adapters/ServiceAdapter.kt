@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delicorrientazos.R
-import com.example.delicorrientazos.ui.home.Service
+import com.example.delicorrientazos.data.models.Service
 
 class ServiceAdapter(private val serviceList:List<Service>, private val onClickListener: (Service) -> Unit) : RecyclerView.Adapter<ServiceViewHolder>() {
 

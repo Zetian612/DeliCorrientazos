@@ -8,4 +8,6 @@
     <string name="producto">Producto</string>
     <string name="confirmar">Confirmar</string>
     <string name="ingrediente">Ingrediente</string>
+    <string name="deliciosos_productos_personaliza_la_tuya" />
+    <string name="deliciosos_productos_personaliza_el_tuyo">deliciosos_productos_personaliza_el_tuyo</string>
 </resources>

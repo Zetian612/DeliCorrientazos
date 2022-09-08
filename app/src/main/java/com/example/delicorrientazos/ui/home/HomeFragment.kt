@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delicorrientazos.R
+import com.example.delicorrientazos.data.models.Service
+import com.example.delicorrientazos.data.providers.ServiceProvider
 import com.example.delicorrientazos.databinding.FragmentHomeBinding
 import com.example.delicorrientazos.ui.home.adapters.ServiceAdapter
 import com.example.delicorrientazos.ui.home.services.asesorias.AsesoriasActivity

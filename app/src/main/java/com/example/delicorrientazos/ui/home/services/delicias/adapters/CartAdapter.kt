@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delicorrientazos.R
-import com.example.delicorrientazos.ui.home.services.delicias.Cart
+import com.example.delicorrientazos.data.models.Cart
 
 class CartAdapter(
-    private val cartList: List<Cart>,
+    private val cartList: MutableList<Cart>,
     private val onClickDelete:(Int) -> Unit
 ) : RecyclerView.Adapter<CartViewHolder>() {
 

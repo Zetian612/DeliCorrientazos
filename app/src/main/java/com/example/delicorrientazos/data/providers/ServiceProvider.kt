@@ -1,6 +1,7 @@
-package com.example.delicorrientazos.ui.home
+package com.example.delicorrientazos.data.providers
 
 import com.example.delicorrientazos.R
+import com.example.delicorrientazos.data.models.Service
 
 class ServiceProvider {
     companion object {

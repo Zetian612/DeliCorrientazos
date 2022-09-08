@@ -1,25 +1,27 @@
-package com.example.delicorrientazos.ui.home.services.delicias
+package com.example.delicorrientazos.data.providers.delicias
+
+import com.example.delicorrientazos.data.models.Ingredients
 
 class IngredientesProvider {
     companion object {
-        val ingredientesList = listOf<Ingredientes>(
-            Ingredientes(
+        val ingredientesList = listOf<Ingredients>(
+            Ingredients(
                 1,
                 "Pollo"
             ),
-            Ingredientes(
+            Ingredients(
                 2,
                 "Carne"
             ),
-            Ingredientes(
+            Ingredients(
                 3,
                 "Pescado"
             ),
-            Ingredientes(
+            Ingredients(
                 4,
                 "Chorizo"
             ),
-            Ingredientes(
+            Ingredients(
                 5,
                 "Tocineta"
             ),
