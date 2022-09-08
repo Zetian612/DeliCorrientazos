@@ -49,11 +49,11 @@ class CartActivity : AppCompatActivity() {
     private fun goToWhatsapp() {
         val intent = Intent(Intent.ACTION_VIEW)
         // enviar mensaje a whatsapp con los productos del carrito de compras
-        cartMutableList.forEach {
-            intent.data = Uri.parse("https://api.whatsapp.com/send?phone=+573187403822&text=Hola, quiero pedir ${it.name} ${it.quantity} ")
-        }
-
+        val message = "Hola, quisiera pedir: \n" + cartMutableList.joinToString("\n") { it.name }
+        intent.data = Uri.parse("https://api.whatsapp.com/send?phone=+573187403822&text=$message")
         startActivity(intent)
+
+
     }
 
 

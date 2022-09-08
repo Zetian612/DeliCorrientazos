@@ -6,13 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.services.asesorias.AsesoriasActivity">
 
-    <TextView
+
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Asesorías"
-        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/_0_000" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerAsesorias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_asesorias"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <Button
+        android:id="@+id/btnGoToWs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agenda tu asesoria!"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerAsesorias" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

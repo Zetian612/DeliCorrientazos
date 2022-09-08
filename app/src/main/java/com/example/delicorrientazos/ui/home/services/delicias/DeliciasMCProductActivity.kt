@@ -8,9 +8,7 @@ import android.widget.CheckBox
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.example.delicorrientazos.R
-import com.example.delicorrientazos.data.db.AppDatabase
 import com.example.delicorrientazos.data.models.Cart
 import com.example.delicorrientazos.data.models.Ingredients
 import com.example.delicorrientazos.data.providers.delicias.IngredientesProvider
