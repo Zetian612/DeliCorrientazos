@@ -31,15 +31,15 @@ class DeliciasMcActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_delicias_mc)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = DeliciasAdapter(ProductProvider.cartList) { productItem ->
-            onItemSelect(productItem as Producto)
+            onItemSelect(productItem)
         }
 
     }
 
-    private fun onItemSelect(position: Producto) {
+    private fun onItemSelect(productItem: Producto) {
         val intent = Intent(this, DeliciasMCProductActivity::class.java)
-        intent.putExtra("product_position", position.id)
-        intent.putExtra("product_name", position.name)
+        intent.putExtra("product_position", productItem.id)
+        intent.putExtra("product_name", productItem.name)
         startActivity(intent)
     }
 
