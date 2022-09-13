@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "670840842454",
+    "project_id": "delicorrientazos",
+    "storage_bucket": "delicorrientazos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:670840842454:android:136905d43a0ad2baa58177",
+        "android_client_info": {
+          "package_name": "com.example.delicorrientazos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "670840842454-lmgt585smqd8a9c94rt9993fbiccppmc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLsvwBPtMD1KDqSL7tTjPyxFqJmaK7J3w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "670840842454-lmgt585smqd8a9c94rt9993fbiccppmc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
