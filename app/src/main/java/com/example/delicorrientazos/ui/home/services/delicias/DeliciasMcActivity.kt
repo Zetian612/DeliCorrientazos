@@ -12,16 +12,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.delicorrientazos.R
+import com.example.delicorrientazos.data.db.CartDeliDatabase
+import com.example.delicorrientazos.data.db.entities.CartDelicias
 import com.example.delicorrientazos.data.models.Producto
-import com.example.delicorrientazos.data.models.Service
 import com.example.delicorrientazos.data.providers.delicias.ProductProvider
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class DeliciasMcActivity : AppCompatActivity() {
 
+    private lateinit var db: CartDeliDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delicias_mc)
-
+        db = CartDeliDatabase.getDatabase(this)
         initRecyclerView()
 
 
@@ -30,17 +35,48 @@ class DeliciasMcActivity : AppCompatActivity() {
     private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_delicias_mc)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = DeliciasAdapter(ProductProvider.cartList) { productItem ->
+        recyclerView.adapter = DeliciasAdapter(ProductProvider.productList) { productItem ->
             onItemSelect(productItem)
         }
 
     }
 
     private fun onItemSelect(productItem: Producto) {
-        val intent = Intent(this, DeliciasMCProductActivity::class.java)
-        intent.putExtra("product_position", productItem.id)
-        intent.putExtra("product_name", productItem.name)
-        startActivity(intent)
+        if (productItem.hasIngredients == Producto.Ingredients.NO){
+            // validar si el producto ya existe en el carrito
+            var cartItem: CartDelicias = db.cartDeliciasDao().getProductById(productItem.id)
+            if (cartItem == null){
+                // agregar producto al carrito
+                val cart = CartDelicias(
+                    null,
+                    productItem.id,
+                    productItem.name,
+                    1,
+                    productItem.price,
+                    productItem.category.name
+                )
+                GlobalScope.launch(Dispatchers.IO) {
+                    db.cartDeliciasDao().insertAll(cart)
+                }
+                Toast.makeText(this, "Producto agregado al carrito", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, CartActivity::class.java)
+                startActivity(intent)
+            } else {
+                // actualizar la cantidad del producto en el carrito
+                   cartItem.quantity = cartItem.quantity + 1
+                GlobalScope.launch(Dispatchers.IO) {
+                    db.cartDeliciasDao().updateById(cartItem.id, cartItem.quantity)
+                }
+                val intent = Intent(this, CartActivity::class.java)
+                startActivity(intent)
+            }
+
+        } else {
+            val intent = Intent(this, DeliciasMCProductActivity::class.java)
+            intent.putExtra("product_position", productItem.id)
+            intent.putExtra("product_name", productItem.name)
+            startActivity(intent)
+        }
     }
 
 }

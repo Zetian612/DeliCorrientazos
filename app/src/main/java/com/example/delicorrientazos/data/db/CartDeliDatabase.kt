@@ -24,8 +24,8 @@ abstract class CartDeliDatabase: RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     CartDeliDatabase::class.java,
-                    "mc_database"
-                ).build()
+                    "database_mc_app_v"
+                ).allowMainThreadQueries().build()
                 INSTANCE = instance
                 return instance
             }

@@ -8,7 +8,9 @@ import com.example.delicorrientazos.data.models.Cart
 
 class CartAdapter(
     private val cartList: MutableList<Cart>,
-    private val onClickDelete:(Int) -> Unit
+    private val onClickDelete:(Int) -> Unit,
+    private val onClickPlus:(Int) -> Unit,
+    private val onClickMinus:(Int) -> Unit
 ) : RecyclerView.Adapter<CartViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
@@ -17,10 +19,15 @@ class CartAdapter(
     }
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         val cart = cartList[position]
-        holder.bind(cart, onClickDelete)
+        holder.bind(cart, onClickDelete, onClickPlus, onClickMinus)
     }
     override fun getItemCount(): Int {
         return cartList.size
+    }
+
+    fun setListData(cartMutableList: MutableList<Cart>) {
+        this.cartList.clear()
+        this.cartList.addAll(cartMutableList)
     }
 
 }

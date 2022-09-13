@@ -37,6 +37,22 @@
             android:layout_marginTop="45dp"
             android:text="- Ingredientes" />
 
+        <TextView
+            android:id="@+id/textViewCartQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="65dp"
+            android:text="- Cantidad:"
+            />
+        <TextView
+            android:id="@+id/textViewCartPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="85dp"
+            android:text="- Price" />
+
         <ImageButton
             android:id="@+id/buttonEliminar"
             android:layout_width="61dp"
@@ -48,6 +64,25 @@
             android:background="@drawable/ic_baseline_delete_forever_24"
             android:backgroundTint="#ff0000" />
 
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="190dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="44dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:text="-" />
 
 
     </androidx.cardview.widget.CardView>
