@@ -11,6 +11,7 @@ import com.example.delicorrientazos.R
 import com.example.delicorrientazos.ui.account.AccountFragment
 import com.example.delicorrientazos.ui.account.ProviderType
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +33,19 @@ class RegisterActivity : AppCompatActivity() {
             if (nameUser.text.isNotEmpty() && lastnameUser.text.isNotEmpty() && signupEmailAddress.text.isNotEmpty() && signupPassword.text.isNotEmpty()) {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(signupEmailAddress.text.toString(), signupPassword.text.toString()).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        showHome(it.result?.user?.email ?: "", ProviderType.BASIC)
+                        FirebaseFirestore.getInstance().collection("users").document(signupEmailAddress.text.toString()).set(
+                            hashMapOf(
+                                "name" to nameUser.text.toString(),
+                                "lastname" to lastnameUser.text.toString(),
+                                //"email" to signupEmailAddress.text.toString()
+                            )
+                        ).addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                showHome(nameUser.text.toString(),it.result?.user?.email ?: "", ProviderType.BASIC)
+                            } else {
+                                showAlert()
+                            }
+                        }
                     } else {
                         showAlert()
                     }
@@ -41,8 +54,9 @@ class RegisterActivity : AppCompatActivity() {
         }
     }
 
-    private fun showHome(email: String, provider: ProviderType) {
+    private fun showHome(name: String, email: String, provider: ProviderType) {
         val homeIntent = Intent(this, MainActivity::class.java).apply {
+            putExtra("name", name)
             putExtra("email", email)
             putExtra("provider", provider.name)
         }
