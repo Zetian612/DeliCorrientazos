@@ -9,7 +9,7 @@ import com.example.delicorrientazos.data.models.Service
 
 class ServiceViewHolder(view: View):RecyclerView.ViewHolder(view){
 
-    val img = view.findViewById<ImageView>(R.id.imageView)
+    val img = view.findViewById<ImageView>(R.id.imageViewlocal)
     private val binding = ListContentBinding.bind(view)
 
     fun render(serviceModel: Service, onClickListener: (Service) -> Unit){

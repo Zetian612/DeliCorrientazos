@@ -31,20 +31,6 @@ class AccountFragment : Fragment(R.layout.fragment_account) {
             startActivity(Intent(requireContext(), LoginActivity::class.java))
         }
 
-        // acceder a shared preferences
-       /* val prefs = requireActivity().getSharedPreferences(getString(R.string.prefs_file), Context.MODE_PRIVATE)
-        var email = prefs.getString("email", null)
-        val name = prefs.getString("name", null)
-
-
-        // si no hay email, no hay usuario logueado
-        if (email != null && name != null) {
-           // view.findViewById<TextView>(R.id.nameUserTxt).text = name
-            view.findViewById<Button>(R.id.buttonGoLogin).visibility = View.GONE
-        } else {
-            view.findViewById<Button>(R.id.buttonLogout).visibility = View.GONE
-        }*/
-
     }
 
     override fun onResume() {
