@@ -5,7 +5,13 @@ data class Local(
     val nombre: String,
     val direccion: String,
     val telefono: Long,
+    val type: Type,
     val img: Int
 ) {
 
+    enum class Type {
+        COMIDA,
+        SERVICIOS,
+        OTROS
+    }
 }

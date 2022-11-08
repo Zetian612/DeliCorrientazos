@@ -31,7 +31,15 @@ class ProductProvider {
                 R.drawable.pngwing_com,
                 CategoryProvider.listCategories[0],
                 Producto.Ingredients.NO
-            )
+            ),
+            Producto(
+            3,
+            "Gaseosa",
+            2000,
+            R.drawable.gaseosa,
+            CategoryProvider.listCategories[0],
+            Producto.Ingredients.NO
+        )
         )
     }
 }

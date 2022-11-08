@@ -26,7 +26,7 @@ class MenuCorrientazosActivity : AppCompatActivity() {
 
     fun initRecyclerView(menuCorrientazos: List<MenuDeliCorrientazos?>?) {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerMenuCorrientazos)
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
+        recyclerView.layoutManager = GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false)
         recyclerView.adapter = MenuCorrientazosAdapter(menuCorrientazos)
     }
 

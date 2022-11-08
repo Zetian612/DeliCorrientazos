@@ -32,9 +32,19 @@ class LoQueSeaActivity : AppCompatActivity() {
     private fun onItemClicked(item: Local) {
 
         val intent = Intent(Intent.ACTION_VIEW)
-        val message = "Hola, me gustaría pedir comida de ${item.nombre}"
 
-        intent.data = "https://api.whatsapp.com/send?phone=+57${item.telefono}&text=${message}".toUri()
-        startActivity(intent)
+        if (item.type == Local.Type.COMIDA) {
+            val message = "Hola, me gustaría pedir comida de ${item.nombre}"
+            intent.data = "https://api.whatsapp.com/send?phone=+57${item.telefono}&text=${message}".toUri()
+            startActivity(intent)
+        } else if (item.type == Local.Type.SERVICIOS) {
+            val message = "Hola, me gustaría solicitar mas informacion sobre los servicios de ${item.nombre}"
+            intent.data = "https://api.whatsapp.com/send?phone=+57${item.telefono}&text=${message}".toUri()
+            startActivity(intent)
+        } else {
+            val message = "Hola, me gustaría solicitar mas informacion acerca de ${item.nombre}"
+            intent.data = "https://api.whatsapp.com/send?phone=+57${item.telefono}&text=${message}".toUri()
+            startActivity(intent)
+        }
     }
 }

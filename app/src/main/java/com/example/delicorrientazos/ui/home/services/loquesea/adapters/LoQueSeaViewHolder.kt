@@ -15,7 +15,7 @@ class LoQueSeaViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
     val cardViewloqsea = view.findViewById<CardView>(R.id.cardViewloqsea)
 
     fun render(item: Local, onClickListener: (Local) -> Unit) {
-        txtNombreLocal.text = item.nombre + " " + item.direccion
+        txtNombreLocal.text = item.nombre + " - " + item.direccion
         img.setImageResource(item.img)
 
         cardViewloqsea.setOnClickListener {
